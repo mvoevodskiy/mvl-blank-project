@@ -1,21 +1,11 @@
-const MVTools = require('mvtools');
+const MVLoaderBase = require('mvloader/src/mvloaderbase');
 
-class MVLBlankController {
-    config = {};
-    defaults = {};
+class MVLBlankController extends MVLoaderBase {
 
     constructor (...config) {
-        this.MT = new MVTools;
-        this.loadConfig(...config);
+        super(...config);
     }
 
-    loadConfig (...config) {
-        this.config = this.MT.mergeRecursive(this.defaults, this.config, ...config);
-    }
-
-    init () {}
-
-    initFinish () {}
 }
 
 module.exports = MVLBlankController;

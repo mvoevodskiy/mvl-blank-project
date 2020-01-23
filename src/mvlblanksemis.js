@@ -1,6 +1,6 @@
-const MVTools = require('mvtools');
+const MVLoaderBase = require('mvloader/src/mvloaderbase');
 
-class MVLBlankSemis {
+class MVLBlankSemis extends MVLoaderBase{
     static exportConfig = {
         ext: {
             classes: {
@@ -24,21 +24,10 @@ class MVLBlankSemis {
         db: {},
     };
 
-    config = {};
-    defaults = {};
-
-    constructor (...config) {
-        this.MT = new MVTools;
-        this.loadConfig(...config);
+    constructor(...config) {
+        super(...config);
     }
 
-    loadConfig (...config) {
-        this.config = this.MT.mergeRecursive(this.defaults, this.config, ...config);
-    }
-
-    init () {}
-
-    initFinish () {}
 }
 
 module.exports = MVLBlankSemis;
