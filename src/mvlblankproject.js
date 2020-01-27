@@ -42,6 +42,14 @@ class MVLBlankProject extends MVLoader {
         super(localConfig, config);
     }
 
+    async init() {
+        return super.init();
+    }
+
+    async initFinish() {
+        super.initFinish();
+    }
+
 }
 
 module.exports = MVLBlankProject;
