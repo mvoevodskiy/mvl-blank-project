@@ -1,4 +1,4 @@
-const MVLoader = require('mvloader');
+const {MVLoader} = require('mvloader');
 // const DBHandler = require('mvl-db-handler');
 // const ExampleSemis = require('./mvlblanksemis');
 
