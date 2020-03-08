@@ -15,8 +15,7 @@ class MVLBlankProject extends MVLoader {
         let localConfig = {
             ext: {
                 classes: {
-                    classes: {
-                        // DBHandler: DBHandler,
+                    controllers: {
                         // MVLBlankController: require('./controllers/mvlblankcontroller'),
                     },
                     handlers: {
