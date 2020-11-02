@@ -1,45 +1,42 @@
-const {MVLoaderBase} = require('mvloader');
+const { MVLoaderBase } = require('mvloader')
 
-class MVLBlankSemis extends MVLoaderBase{
-    static exportConfig = {
-        ext: {
-            classes: {
-                semis: {},
-                controllers: {},
-                handlers: {},
-            },
-            configs: {
-                controllers: {},
-                handlers: {
-                    DBHandler: {
-                        sequelize: {},
-                        models: {
-                            // MVLExampleModel: require('./models/mvlblankexample'),
-                        }
-                    }
-                },
-                semis: {},
-            }
-        },
-        db: {},
-    };
+class MVLBlankSemis extends MVLoaderBase {
+  constructor (App, ...config) {
+    const localDefaults = {}
+    super(localDefaults, ...config)
+    this.App = App
+  }
 
-    constructor (App, ...config) {
-        let localDefaults = {
+  async init () {
+    return super.init()
+  }
 
-        };
-        super(localDefaults, ...config);
-        this.App = App;
-    }
-
-    async init() {
-        return super.init();
-    }
-
-    async initFinish() {
-        super.initFinish();
-    }
-
+  async initFinish () {
+    super.initFinish()
+  }
 }
 
-module.exports = MVLBlankSemis;
+MVLoaderBase.exportConfig = {
+  ext: {
+    classes: {
+      semis: {},
+      controllers: {},
+      handlers: {}
+    },
+    configs: {
+      controllers: {},
+      handlers: {
+        DBHandler: {
+          sequelize: {},
+          models: {
+            // MVLExampleModel: require('./models/mvlblankexample'),
+          }
+        }
+      },
+      semis: {}
+    }
+  },
+  db: {}
+}
+
+module.exports = MVLBlankSemis

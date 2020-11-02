@@ -1,23 +1,19 @@
-const {MVLoaderBase} = require('mvloader');
+const { MVLoaderBase } = require('mvloader')
 
 class MVLBlankController extends MVLoaderBase {
+  constructor (App, ...config) {
+    const localDefaults = {}
+    super(localDefaults, ...config)
+    this.App = App
+  }
 
-    constructor (App, ...config) {
-        let localDefaults = {
+  async init () {
+    return super.init()
+  }
 
-        };
-        super(localDefaults, ...config);
-        this.App = App;
-    }
-
-    async init() {
-        return super.init();
-    }
-
-    async initFinish() {
-        super.initFinish();
-    }
-
+  async initFinish () {
+    super.initFinish()
+  }
 }
 
-module.exports = MVLBlankController;
+module.exports = MVLBlankController
